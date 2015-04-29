@@ -10,7 +10,9 @@ function writeDing() {
   console.log('Ding!');
 }
 
-var dingHandle = setTimeout (writeDing(), 3000);
+var threeSecondInterval = setTimeout (writeDing, 3000);
+
+var dingHandle = setTimeout (function(), 3000);
 
 // Question 2
 
@@ -34,7 +36,19 @@ var dingHandle = setTimeout (writeDing(), 3000);
 var words = ['short', 'medium', 'long', 'interminable', 'lengthy'];
 
 var byLength = function (A, B) {
-  // your code here
+  var i;
+  for (i = 0; i < words.length; i++) {
+    if(a[i] < B) {
+      return -1;
+    }
+    elseif(a[i] = b) {
+      return 0;
+    }
+    else {
+      return 1;
+    }
+  }
+
 };
 
 var sortedWords = words.sort(byLength);
@@ -87,7 +101,7 @@ function power(m, n) {
 // you specified in the makePower call.
 
 function makePower(power) {
-  // your code here
+  return
 }
 
 var power2 = makePower(2);
