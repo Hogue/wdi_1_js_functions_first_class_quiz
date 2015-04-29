@@ -9,10 +9,9 @@
 function writeDing() {
   console.log('Ding!');
 }
-
-var threeSecondInterval = setTimeout (writeDing, 3000);
-
-var dingHandle = setTimeout (function(), 3000);
+//this is simply a debugging problem — originally the code was
+// var dingHandle = setTimeout (writeDing (), 3000); *the first argument needed () to be removed
+var dingHandle = setTimeout (writeDing, 3000);
 
 // Question 2
 
@@ -36,19 +35,16 @@ var dingHandle = setTimeout (function(), 3000);
 var words = ['short', 'medium', 'long', 'interminable', 'lengthy'];
 
 var byLength = function (A, B) {
-  var i;
-  for (i = 0; i < words.length; i++) {
-    if(a[i] < B) {
-      return -1;
-    }
-    elseif(a[i] = b) {
-      return 0;
-    }
-    else {
-      return 1;
-    }
+  //this is just telling the computer how to sort — it's almost literal
+  if(A.length < B.length) {
+    return -1;
   }
-
+  else if(A.length > B.length) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
 };
 
 var sortedWords = words.sort(byLength);
@@ -101,7 +97,10 @@ function power(m, n) {
 // you specified in the makePower call.
 
 function makePower(power) {
-  return
+  return function(x) {
+    // the below code generates the power of a number
+    Math.pow(x, power)
+  }
 }
 
 var power2 = makePower(2);
